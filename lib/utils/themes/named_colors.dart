@@ -9,6 +9,5 @@ class NamedColors {
   static const goldenDream = Color(0xFFF0DF38);
   static const white = Color(0xDEFFFFFF);
   static const grey = Color(0xFF949B9E);
-
   static const dimWhite = Color(0xFFEEEEEE);
 }

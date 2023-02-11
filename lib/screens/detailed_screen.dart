@@ -18,7 +18,6 @@ class _DetailedScreenState extends State<DetailedScreen> {
     dynamic data = widget.post;
     String? imageUrl = data['jetpack_featured_media_url'];
     String? title = data['parselyMeta']['parsely-title'];
-    final deviceSize = MediaQuery.of(context).size;
     return Scaffold(
         appBar: AppBar(
           title: const Text("Detailed Info"),

@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:grahnumb_assignment/services/user_data_model/user_data_model.dart';
 import 'package:http/http.dart' as http;
 
+// for serialized data
 class ApiManager {
   Future<UserDataModel> getUserData() async {
     final response = await http.get(Uri.parse(
