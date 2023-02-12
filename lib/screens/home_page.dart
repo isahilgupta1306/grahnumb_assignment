@@ -40,7 +40,10 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: const Text("TechCrunch"),
+          title: const Text(
+            "Grahnumb",
+            style: TextStyle(fontSize: 17),
+          ),
           elevation: 0,
           titleTextStyle: AppTextStyles.appBarTitle,
           backgroundColor: Colors.transparent,
@@ -72,7 +75,7 @@ class _HomePageState extends State<HomePage> {
                   return TwitterCard(
                       context, post, imageUrl, title, authorName, deviceSize);
                 } else {
-                  const Center(child: CircularProgressIndicator());
+                  return const Center(child: CircularProgressIndicator());
                 }
               })
         ]),
@@ -112,7 +115,7 @@ class _HomePageState extends State<HomePage> {
 }
 
 Widget TwitterCard(BuildContext context, dynamic post, String? imageUrl,
-    String? title, String? authorName, dynamic deviceSize) {
+    String? title, String? authorName, Size deviceSize) {
   return GestureDetector(
     onTap: () => Navigator.of(context).push(MaterialPageRoute(
         builder: (context) => DetailedScreen(
@@ -135,50 +138,53 @@ Widget TwitterCard(BuildContext context, dynamic post, String? imageUrl,
             width: 10,
           ),
           Flexible(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    Text(
-                      authorName!,
-                      style: AppTextStyles.userNameStyle,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    Flexible(
-                      child: Text(
-                        "  @${authorName!.toLowerCase()}", //authorName in use
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 5),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        authorName!,
+                        style: AppTextStyles.userNameStyle,
                         overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(color: NamedColors.grey),
                       ),
-                    ),
-                  ],
-                ),
-                Text(title!,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: GoogleFonts.roboto(
-                        color: NamedColors.twitterBlack, fontSize: 15)),
-                Container(
-                    margin: const EdgeInsets.only(top: 8),
-                    alignment: Alignment.topLeft,
-                    decoration:
-                        BoxDecoration(borderRadius: BorderRadius.circular(30)),
-                    height: deviceSize.height * 0.2,
-                    width: deviceSize.width * 0.64,
-                    child: ClipRRect(
-                        borderRadius: BorderRadius.circular(10),
-                        child: Image.network(
-                          imageUrl!, //url used
-                          fit: BoxFit.cover,
-                        ))),
-                const Divider(
-                  color: Colors.grey,
-                )
-              ],
+                      Expanded(
+                        child: Text(
+                          "  @${authorName!.toLowerCase()}", //authorName in use
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(color: NamedColors.grey),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Text(title!,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: GoogleFonts.roboto(
+                          color: NamedColors.twitterBlack, fontSize: 15)),
+                  Container(
+                      margin: const EdgeInsets.only(top: 8),
+                      alignment: Alignment.topLeft,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30)),
+                      height: deviceSize.height * 0.2,
+                      width: deviceSize.width * 0.62,
+                      child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image.network(
+                            imageUrl!, //url used
+                            fit: BoxFit.cover,
+                          ))),
+                  const Divider(
+                    color: Colors.grey,
+                  )
+                ],
+              ),
             ),
-          )
+          ),
         ],
       ),
     ),
