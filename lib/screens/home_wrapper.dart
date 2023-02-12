@@ -1,13 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+
 import 'package:grahnumb_assignment/screens/home_page.dart';
 import 'package:grahnumb_assignment/screens/messages_page_dummy.dart';
 import 'package:grahnumb_assignment/screens/notification_page_dummy.dart';
 import 'package:grahnumb_assignment/screens/search_page_dummy.dart';
 import 'package:grahnumb_assignment/screens/twitterspaces__page_dummy.dart';
-import 'package:grahnumb_assignment/utils/themes/app_text_styles.dart';
+
 import 'package:grahnumb_assignment/utils/themes/named_colors.dart';
 
 class HomeWrapper extends StatefulWidget {
@@ -44,7 +43,6 @@ class _HomeWrapperState extends State<HomeWrapper> {
       const MessagesPage()
     ];
 
-    var deviceSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: null,
       floatingActionButton: FloatingActionButton(
@@ -60,8 +58,9 @@ class _HomeWrapperState extends State<HomeWrapper> {
         currentIndex: _currentIndex,
         showSelectedLabels: false,
         showUnselectedLabels: false,
-        selectedIconTheme: IconThemeData(color: NamedColors.twitterBlack),
-        unselectedIconTheme: IconThemeData(color: NamedColors.twitterBlack),
+        selectedIconTheme: const IconThemeData(color: NamedColors.twitterBlack),
+        unselectedIconTheme:
+            const IconThemeData(color: NamedColors.twitterBlack),
         items: const [
           BottomNavigationBarItem(
             activeIcon: Icon(Icons.home_filled),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:grahnumb_assignment/screens/home_page.dart';
 import 'package:grahnumb_assignment/screens/home_wrapper.dart';
 import 'package:grahnumb_assignment/utils/themes/named_colors.dart';
 
@@ -13,7 +12,7 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   // This widget is the root of your application.
-  @overriq
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',

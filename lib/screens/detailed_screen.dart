@@ -6,7 +6,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 class DetailedScreen extends StatefulWidget {
   final dynamic post;
-  DetailedScreen({super.key, this.post});
+  const DetailedScreen({super.key, this.post});
 
   @override
   State<DetailedScreen> createState() => _DetailedScreenState();
